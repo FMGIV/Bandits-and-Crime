@@ -1,0 +1,7 @@
+{
+  "displayedName": "Bandits and Crime",
+  "prefix": "BanditsandCrime",
+  "description": "This mod overhauls bandits and adds a crime modifier to cities.",
+  "versionsSupported": [ "1.1", "2.0" ],
+  "modCredit": "CriticalExistenceFailure"
+}

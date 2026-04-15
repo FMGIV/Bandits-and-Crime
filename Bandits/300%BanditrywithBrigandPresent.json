@@ -1,0 +1,77 @@
+{
+  "id": "BanditsandCrime.ToomuchBanditryandBrigand",
+  "modCredit": "CriticalExistenceFailure",
+  "imgCredit": "?",
+  "image": "BanditsandCrime.Bandits.jpg",
+
+  "type": "INERT",
+  "conditional": "1=1",
+  "probability": 1,
+
+  "name": "Banditry Reaches Tipping Point",
+  "description": "The Banditry in %LOCATION_NAME has reached a tipping point. Bandits have overwhelmed the local garrison, and now run rampant and unopposed, bows and blades defeating halberds and steel armor by simple numeric advantage.",
+
+  "choices": [
+    {
+      "name": "Raid Food Stores",
+      "description": "The Bandits raid this location's food stores, negatively affecting the current food supply. Banditry is reduced by 100%.",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "BANDITS_REDUCE_FOOD",
+              "argument": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rally the Bandits",
+      "description": "The bandits rise up, creating a 50 man strong army, that will start razing locations at random. Banditry is reduced by 100%.\n\n[Requires a non-capital location with 100% infiltration]",
+      "condition": "(infiltration=100)",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "RALLY_BANDITS",
+              "argument": "50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Raid location",
+      "description": "Increases Devastation by 100. Banditry is Reduced by 100%.",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "CHANGE_DEVASTATION",
+              "argument": "100"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Take Personal Command",
+      "description": "75 Bandits appear on the map, ready for The Brigand to command. Reduces Banditry modifier by 100%.",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "COMMAND_BANDITS",
+              "argument": "75"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

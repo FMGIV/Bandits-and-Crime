@@ -1,0 +1,62 @@
+{
+  "id": "BanditsandCrime.ToomuchCrime",
+  "modCredit": "CriticalExistenceFailure",
+  "imgCredit": "The Porteous Mob - James Drummond",
+  "image": "BanditsandCrime.Crime.jpg",
+
+  "type": "INERT",
+  "conditional": "1=1",
+  "probability": 1,
+
+  "name": "Crime Reaches Breaking Point",
+  "description": "The Crime in %LOCATION_NAME has reached a tipping point. Criminals and Mobs terrorize the streets, unopposed by the ruling soveriegn. In the chaos, perhaps an opportunity can be gained from this...",
+
+  "choices": [
+    {
+      "name": "Criminals Damage Prosperity",
+      "description": "In the chaos, the city's prosperity has suffered. Crime temporarily reduces Prosperity by an extra 35% and is reduced by 100%.",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "CRIME_REDUCE_PROSPERITY",
+              "argument": "75"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Empty Treasury",
+      "description": "The criminals are manipulated into stealing all the gold from this locations treasury plus 100 gold, and then leaving it in a cache. Crime is reduced by 100%.\n\n[Requires 100% infiltration]",
+      "condition": "(infiltration=100)",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "CRIME_STEAL_GOLD",
+              "argument": "50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Increase Unrest",
+      "description": "Increases UNREST by 100. Crime is Reduced by 100%.",
+      "outcomes": [
+        {
+          "weight": 0.8,
+          "effects": [
+            {
+              "command": "CHANGE_UNREST",
+              "argument": "100"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
